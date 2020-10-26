@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="project-record">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="meta"/>
+        <xs:element ref="abstract"/>
+        <xs:element ref="workteam"/>
+        <xs:element minOccurs="0" ref="logs"/>
+        <xs:element ref="deliverables"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="meta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="title"/>
+        <xs:element minOccurs="0" ref="subtitle"/>
+        <xs:element ref="key-name"/>
+        <xs:element ref="supervisors"/>
+        <xs:element ref="begin-date"/>
+        <xs:element ref="end-date"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="title" type="xs:string"/>
+  <xs:element name="subtitle" type="xs:string"/>
+  <xs:element name="key-name" type="xs:string"/>
+  <xs:element name="supervisors" type="supervisor"/>
+  <xs:complexType name="supervisor">
+    <xs:sequence>
+      <xs:element ref="supervisor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="supervisor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element minOccurs="0" ref="email"/>
+        <xs:element minOccurs="0" ref="homepage"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="name" type="xs:string"/>
+  <xs:element name="homepage" type="xs:string"/>
+  <xs:element name="email" type="xs:string"/>
+  <xs:element name="begin-date" type="xs:string"/>
+  <xs:element name="end-date" type="xs:string"/>
+  <xs:element name="abstract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="p"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--  elemento paragrafo b = bold i = italico etc etc -->
+  <xs:element name="p">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="b"/>
+        <xs:element ref="i"/>
+        <xs:element ref="u"/>
+        <xs:element ref="ackron"/>
+        <xs:element ref="xref"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="b">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="i"/>
+        <xs:element ref="u"/>
+        <xs:element ref="ackron"/>
+        <xs:element ref="xref"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="i">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="b"/>
+        <xs:element ref="u"/>
+        <xs:element ref="ackron"/>
+        <xs:element ref="xref"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="u">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="b"/>
+        <xs:element ref="i"/>
+        <xs:element ref="ackron"/>
+        <xs:element ref="xref"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ackron" type="xs:string"/>
+  <xs:element name="xref">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.xref"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.xref">
+    <xs:attribute name="url" use="required"/>
+  </xs:attributeGroup>
+  <xs:element name="workteam" type="student"/>
+  <xs:complexType name="student">
+    <xs:sequence>
+      <xs:element ref="student"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="student">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ident"/>
+        <xs:element ref="name"/>
+        <xs:element ref="email"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ident" type="xs:string"/>
+  <xs:element name="logs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="log"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="log">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="date"/>
+        <xs:element ref="description"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="date" type="xs:string"/>
+  <xs:element name="description">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="p"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deliverables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="xref"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
