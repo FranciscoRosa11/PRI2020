@@ -52,7 +52,7 @@
                         </p> 
                     </xsl:if>
                     <p><b>Quadro</b>: <xsl:value-of select="QUADRO"/></p>
-                    <p><b>Desarq</b>: <xsl:value-of select="DESARQ"/></p>
+                    <p><b>Desarquivamento</b>: <xsl:value-of select="DESARQ"/></p>
                     <xsl:if test="INTERP">
                         <p><b>Interpretação</b>: 
                             <xsl:value-of select="INTERP/LIGA"/> 
