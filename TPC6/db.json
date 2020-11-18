@@ -1,0 +1,65 @@
+{
+  "tarefas": [
+    {
+      "descricao": "Comprar campaínha",
+      "responsavel": "Filipa",
+      "datalimite": "20-12-2020",
+      "status": "Pendente",
+      "id": 1
+    },
+    {
+      "descricao": "Limpar a casas",
+      "responsavel": "Filipa",
+      "datalimite": "19-11-2020",
+      "status": "Pendente",
+      "id": 2
+    },
+    {
+      "descricao": "Comprar PS5",
+      "responsavel": "Filipa",
+      "datalimite": "2020-05-20",
+      "status": "Cancelada",
+      "id": 3
+    },
+    {
+      "descricao": "re",
+      "responsavel": "re",
+      "datalimite": "Hoje",
+      "status": "Cancelada",
+      "id": 4
+    },
+    {
+      "descricao": "",
+      "responsavel": "",
+      "datalimite": "",
+      "status": "Cancelada",
+      "id": 5
+    },
+    {
+      "descricao": "",
+      "responsavel": "",
+      "datalimite": "",
+      "status": "Cancelada",
+      "id": 6
+    },
+    {
+      "descricao": "",
+      "responsavel": "",
+      "datalimite": "",
+      "status": "Cancelada",
+      "id": 7
+    },
+    {
+      "descricao": "",
+      "responsavel": "",
+      "datalimite": "",
+      "status": "Cancelada",
+      "id": 8
+    }
+  ],
+  "responsaveis": [
+    {
+      "nome": "Filipa"
+    }
+  ]
+}
